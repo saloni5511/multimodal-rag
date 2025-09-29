@@ -253,4 +253,4 @@ MIT License - see LICENSE file for details.
 
 ---
 
-**Made with ❤️ by Vivek Singh**
+**Made with ❤️ by Saloni Rai**
