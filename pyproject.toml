@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdf-rag-with-image"
+version = "1.0.0"
+authors = [
+    {name = "Vivek Singh", email = "vivekkgp97@gmail.com"},
+]
+description = "A RAG-based PDF chatbot with image rendering capabilities"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Linguistic",
+]
+keywords = ["RAG", "PDF", "chatbot", "AI", "streamlit", "gemini"]
+dependencies = [
+    "streamlit",
+    "numpy",
+    "PyMuPDF",
+    "langchain",
+    "langchain-community",
+    "langchain-google-genai",
+    "faiss-cpu",
+    "google-generativeai",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "black>=21.0",
+    "flake8>=3.8",
+]
+
+[project.urls]
+Homepage = "https://github.com/vivek-slngh/pdf-rag-with-image"
+Documentation = "https://github.com/vivek-slngh/pdf-rag-with-image#readme"
+Repository = "https://github.com/vivek-slngh/pdf-rag-with-image.git"
+Issues = "https://github.com/vivek-slngh/pdf-rag-with-image/issues"
+
+[project.scripts]
+pdf-rag = "pdf_rag_with_image.cli:main"
+pdf-rag-ui = "pdf_rag_with_image.main_ui:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pdf_rag_with_image*", "frontend*"]
+
+[tool.setuptools.package-data]
+pdf_rag_with_image = ["*.py"]
+frontend = ["*.py"]
