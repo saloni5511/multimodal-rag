@@ -1,0 +1,49 @@
+{
+  "_comment": "Configuration file for RAG system with image processing",
+  
+  "chunking": {
+    "_comment": "Settings for text chunking during document processing",
+    "chunk_size": 600,
+    "_chunk_size_comment": "Maximum number of characters per text chunk",
+    "overlap": 90,
+    "_overlap_comment": "Number of overlapping characters between consecutive chunks"
+  },
+  
+  "retrieval": {
+    "_comment": "Settings for retrieving relevant chunks from vector store",
+    "top_k": 5,
+    "_top_k_comment": "Number of most relevant chunks to retrieve for each query",
+    "normalize": true,
+    "_normalize_comment": "Whether to normalize embeddings for better similarity search"
+  },
+  
+  "llm": {
+    "_comment": "Language model configuration for text generation and embeddings",
+    "use_claude": true,
+    "_use_claude_comment": "Whether to use Claude (AWS Bedrock) instead of Gemini",
+    "aws_region": "eu-west-1",
+    "_aws_region_comment": "AWS region for Bedrock services",
+    
+    "gemini": {
+      "_comment": "Google Gemini model configuration (fallback option)",
+      "model": "gemini-1.5-flash",
+      "_model_comment": "Gemini model name for text generation",
+      "embedding_model": "models/embedding-001",
+      "_embedding_model_comment": "Gemini embedding model for text vectorization"
+    },
+    
+    "claude": {
+      "_comment": "Claude model configuration via AWS Bedrock",
+      "main_model": "eu.anthropic.claude-sonnet-4-20250514-v1:0",
+      "_main_model_comment": "Claude model ID for final response generation",
+      "image_extraction_model": "eu.anthropic.claude-sonnet-4-20250514-v1:0",
+      "_image_extraction_model_comment": "Claude model ID for analyzing and filtering images"
+    },
+    
+    "cohere": {
+      "_comment": "Cohere model configuration via AWS Bedrock",
+      "embedding_model": "cohere.embed-english-v3",
+      "_embedding_model_comment": "Cohere embedding model ID for creating text embeddings"
+    }
+  }
+}
