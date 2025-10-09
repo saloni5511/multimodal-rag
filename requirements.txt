@@ -1,8 +1,23 @@
+# Core dependencies
 streamlit
 numpy
+
+# PDF processing
 PyMuPDF
+
+# LangChain ecosystem
 langchain
 langchain-community
+langchain-core
+
+# Google AI (Gemini)
 langchain-google-genai
-faiss-cpu
 google-generativeai
+
+# AWS Bedrock
+langchain-aws
+boto3
+botocore
+
+# Vector database
+faiss-cpu
